@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ChatMemoryRepository
+
+ChatMemoryRepository <|-- InMemoryChatMemoryRepository
+ChatMemoryRepository <|-- JdbcChatMemoryRepository
+ChatMemoryRepository <|-- CassandraChatMemoryRepository
+ChatMemoryRepository <|-- Neo4jChatMemoryRepository
+
+
+@enduml
