@@ -25,6 +25,8 @@
         <module>lesson10/sse-client</module>
         <module>lesson11</module>
         <module>lesson12</module>
+        <module>lesson13</module>
+        <module>lesson14</module>
     </modules>
 
     <properties>
