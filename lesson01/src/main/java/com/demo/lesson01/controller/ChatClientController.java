@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 @RestController
 public class ChatClientController {
 
-    private ChatClient chatClient;
+    private final ChatClient chatClient;
 
     public ChatClientController(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
