@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+ChatClientAutoConfiguration -> ChatClient.Builder: 创建一个Builder
+ChatClient.Builder -> ChatModel: Builder需要一个ChatModel
+ChatModel -> ZhiPuAiChatAutoConfiguration: ChatModel来自ZhiPu自动化配置
+ZhiPuAiChatAutoConfiguration -> ZhiPuAiChatModel: 自动化配置创建一个ZhiPuAiChatModel
+ChatClient.Builder <-- ZhiPuAiChatModel: ZhiPuAiChatModel返回给Builder
+ChatClient <- ChatClient.Builder: 用户可以使用Builder创建一个ChatClient
+@enduml
