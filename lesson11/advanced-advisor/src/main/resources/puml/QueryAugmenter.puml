@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface QueryAugmenter
+class ContextualQueryAugmenter
+
+QueryAugmenter <|-- ContextualQueryAugmenter
+
+
+@enduml

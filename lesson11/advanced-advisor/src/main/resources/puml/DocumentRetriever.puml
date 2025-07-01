@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface DocumentRetriever
+class VectorStoreDocumentRetriever
+
+DocumentRetriever <|-- VectorStoreDocumentRetriever
+
+@enduml

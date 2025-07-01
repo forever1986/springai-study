@@ -1,4 +1,4 @@
-package com.demo.lesson11.config;
+package com.demo.lesson11.getstart.config;
 
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.EmbeddingModel;

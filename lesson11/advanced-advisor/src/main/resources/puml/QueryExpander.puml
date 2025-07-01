@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface QueryExpander
+class MultiQueryExpander
+
+QueryExpander <|-- MultiQueryExpander
+
+
+@enduml
