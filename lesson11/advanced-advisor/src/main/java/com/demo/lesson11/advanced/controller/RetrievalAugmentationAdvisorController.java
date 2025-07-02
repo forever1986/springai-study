@@ -2,7 +2,6 @@ package com.demo.lesson11.advanced.controller;
 
 import com.demo.lesson11.advanced.config.RRFFusionProcessor;
 import com.demo.lesson11.advanced.config.RerankDocumentPostProcessor;
-import com.demo.lesson11.advanced.utils.BuildModelUtils;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.document.Document;
@@ -30,21 +29,21 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class RelevancyEvaluatorController {
+public class RetrievalAugmentationAdvisorController {
 
     private ChatClient chatClient;
 
-    public RelevancyEvaluatorController(ChatClient.Builder chatClientBuilder, VectorStore vectorStore, RestTemplateBuilder builder) {
+    public RetrievalAugmentationAdvisorController(ChatClient.Builder chatClientBuilder, VectorStore vectorStore, RestTemplateBuilder builder) {
 
         // 1. Pre-Retrieval模块
         // 1.1 QueryTransformer：将问题转换为中文
         QueryTransformer queryTransformer = TranslationQueryTransformer.builder()
-                .chatClientBuilder(BuildModelUtils.getBuilder())
+                .chatClientBuilder(chatClientBuilder)
                 .targetLanguage("Chinese")
                 .build();
         // 1.2 MultiQueryExpander：将问题变成多个角度的问题
         MultiQueryExpander queryExpander = MultiQueryExpander.builder()
-                .chatClientBuilder(BuildModelUtils.getBuilder()) // 需要引入大模型
+                .chatClientBuilder(chatClientBuilder) // 需要引入大模型
                 .numberOfQueries(3) // 生成新的问题条数
                 .includeOriginal(true) // 是否包括原先问题，默认是true
                 .build();

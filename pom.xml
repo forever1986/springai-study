@@ -36,6 +36,7 @@
         <module>lesson11/get-start</module>
         <module>lesson11/simple-advisor</module>
         <module>lesson11/advanced-advisor</module>
+        <module>lesson21</module>
     </modules>
 
     <properties>
