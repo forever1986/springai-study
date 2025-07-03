@@ -1,4 +1,4 @@
-package com.demo.lesson15.controller;
+package com.demo.lesson15.simple.controller;
 
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.beans.factory.annotation.Autowired;

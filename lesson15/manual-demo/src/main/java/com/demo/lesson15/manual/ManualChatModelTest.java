@@ -1,4 +1,4 @@
-package com.demo.lesson16;
+package com.demo.lesson15.manual;
 
 import org.springframework.ai.zhipuai.ZhiPuAiChatModel;
 import org.springframework.ai.zhipuai.ZhiPuAiChatOptions;
