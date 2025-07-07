@@ -13,7 +13,7 @@ public class MCPClientSSEController {
 
     public MCPClientSSEController(ChatClient.Builder chatClientBuilder, ToolCallbackProvider tools) {
         this.chatClient = chatClientBuilder
-//                .defaultToolCallbacks(tools)
+                .defaultToolCallbacks(tools)
                 .build();
     }
 
