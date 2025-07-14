@@ -1,0 +1,50 @@
+@startuml workflow_graph
+skinparam usecaseFontSize 14
+skinparam usecaseStereotypeFontSize 12
+skinparam hexagonFontSize 14
+skinparam hexagonStereotypeFontSize 12
+title "workflow graph"
+footer
+
+powered by spring-ai-alibaba
+end footer
+circle start<<input>> as __START__
+circle stop as __END__
+usecase "QUERY_REWRITE_NODE"<<Node>>
+usecase "KEYWORD_EXTRACT_NODE"<<Node>>
+usecase "SCHEMA_RECALL_NODE"<<Node>>
+usecase "TABLE_RELATION_NODE"<<Node>>
+usecase "SQL_GENERATE_NODE"<<Node>>
+usecase "SQL_VALIDATE_NODE"<<Node>>
+usecase "SEMANTIC_CONSISTENC_NODE"<<Node>>
+hexagon "check state" as condition1<<Condition>>
+hexagon "check state" as condition2<<Condition>>
+hexagon "check state" as condition3<<Condition>>
+hexagon "check state" as condition4<<Condition>>
+"__START__" -down-> "QUERY_REWRITE_NODE"
+"QUERY_REWRITE_NODE" .down.> "condition1"
+"condition1" .down.> "KEYWORD_EXTRACT_NODE"
+'"QUERY_REWRITE_NODE" .down.> "KEYWORD_EXTRACT_NODE"
+"condition1" .down.> "__END__"
+'"QUERY_REWRITE_NODE" .down.> "__END__"
+"KEYWORD_EXTRACT_NODE" -down-> "SCHEMA_RECALL_NODE"
+"SCHEMA_RECALL_NODE" -down-> "TABLE_RELATION_NODE"
+"TABLE_RELATION_NODE" -down-> "SQL_GENERATE_NODE"
+"SQL_GENERATE_NODE" .down.> "condition2"
+"condition2" .down.> "__END__"
+'"SQL_GENERATE_NODE" .down.> "__END__"
+"condition2" .down.> "KEYWORD_EXTRACT_NODE"
+'"SQL_GENERATE_NODE" .down.> "KEYWORD_EXTRACT_NODE"
+"condition2" .down.> "SQL_VALIDATE_NODE"
+'"SQL_GENERATE_NODE" .down.> "SQL_VALIDATE_NODE"
+"SQL_VALIDATE_NODE" .down.> "condition3"
+"condition3" .down.> "SQL_GENERATE_NODE"
+'"SQL_VALIDATE_NODE" .down.> "SQL_GENERATE_NODE"
+"condition3" .down.> "SEMANTIC_CONSISTENC_NODE"
+'"SQL_VALIDATE_NODE" .down.> "SEMANTIC_CONSISTENC_NODE"
+"SEMANTIC_CONSISTENC_NODE" .down.> "condition4"
+"condition4" .down.> "__END__"
+'"SEMANTIC_CONSISTENC_NODE" .down.> "__END__"
+"condition4" .down.> "SQL_GENERATE_NODE"
+'"SEMANTIC_CONSISTENC_NODE" .down.> "SQL_GENERATE_NODE"
+@enduml
