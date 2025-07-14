@@ -42,6 +42,26 @@
         <module>lesson20</module>
         <module>lesson21</module>
         <module>lesson22</module>
+        <module>lesson23</module>
+        <module>lesson24</module>
+        <module>lesson24/ali-get-start</module>
+        <module>lesson24/ali-memory</module>
+        <module>lesson24/ali-model</module>
+        <module>lesson24/ali-prompt</module>
+        <module>lesson25</module>
+        <module>lesson25/ali-mcp-client</module>
+        <module>lesson25/ali-mcp-server</module>
+        <module>lesson26</module>
+        <module>lesson26/graph-get-start</module>
+        <module>lesson26/graph-human-feedback</module>
+        <module>lesson26/graph-mcp</module>
+        <module>lesson26/graph-parallel</module>
+        <module>lesson27</module>
+        <module>lesson28</module>
+        <module>lesson29</module>
+        <module>lesson30</module>
+        <module>lesson30/baili-agent</module>
+        <module>lesson30/baili-knowledge</module>
     </modules>
 
     <properties>
@@ -50,6 +70,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>3.3.0</spring-boot.version>
         <spring-ai.version>1.0.0</spring-ai.version>
+        <spring-ai-alibaba.version>1.0.0.3-SNAPSHOT</spring-ai-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -69,6 +90,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- spring ai alibaba 插件-->
+            <dependency>
+                <groupId>com.alibaba.cloud.ai</groupId>
+                <artifactId>spring-ai-alibaba-bom</artifactId>
+                <!-- 版本号为1.0.0.3-SNAPSHOT-->
+                <version>${spring-ai-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -77,6 +107,17 @@
         <repository>
             <id>central</id>
             <url>https://maven.aliyun.com/repository/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <name>OSS Sonatype</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
