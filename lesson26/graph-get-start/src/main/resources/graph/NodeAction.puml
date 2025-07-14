@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface NodeAction
+class LlmNode
+class ToolNode
+class HumanNode
+class HttpNode
+class McpNode
+class DocumentExtractorNode
+class 其它
+
+
+NodeAction <|-- LlmNode
+NodeAction <|-- ToolNode
+NodeAction <|-- HumanNode
+NodeAction <|-- HttpNode
+NodeAction <|-- McpNode
+NodeAction <|-- DocumentExtractorNode
+NodeAction <|-- 其它
+
+
+@enduml
