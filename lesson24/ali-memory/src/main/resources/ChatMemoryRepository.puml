@@ -1,0 +1,23 @@
+@startuml
+
+interface ChatMemoryRepository
+class JdbcChatMemoryRepository
+class MysqlChatMemoryRepository
+class OracleChatMemoryRepository
+class PostgresChatMemoryRepository
+class SQLiteChatMemoryRepository
+class SqlServerChatMemoryRepository
+class ElasticsearchChatMemoryRepository
+class RedisChatMemoryRepository
+
+
+ChatMemoryRepository <|-- JdbcChatMemoryRepository
+ChatMemoryRepository <|-- MysqlChatMemoryRepository
+ChatMemoryRepository <|-- OracleChatMemoryRepository
+ChatMemoryRepository <|-- PostgresChatMemoryRepository
+ChatMemoryRepository <|-- SQLiteChatMemoryRepository
+ChatMemoryRepository <|-- SqlServerChatMemoryRepository
+ChatMemoryRepository <|-- ElasticsearchChatMemoryRepository
+ChatMemoryRepository <|-- RedisChatMemoryRepository
+
+@enduml
